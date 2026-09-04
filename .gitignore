@@ -1,0 +1,54 @@
+# ------------------------------------------------------------------
+# EvalAssist — workspace exclusions
+# Virtual environments, dependency trees, build outputs, caches and
+# runtime data are never tracked.
+# ------------------------------------------------------------------
+
+# --- Python virtual environments (runtime deps, NOT source) ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Python bytecode & tool caches ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# --- Node.js / Next.js ---
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Secrets & environment ---
+# Ignore every env file (.env, .env.local, .env.development, .env.production,
+# .env.test, .env.*.local, ...) but KEEP the shareable .env.example template.
+.env
+.env.*
+!.env.example
+
+# --- Runtime data (SQLite DB + uploaded submissions) ---
+*.db
+*.sqlite3
+uploads/
+
+# --- OS / editor clutter ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+*.bak

@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Reference-matched warm espresso & chocolate obsidian palette */
+  --bg-base: #120B09;
+  --bg-surface: #1F1513;
+  --bg-surface-2: #2A1D1A;
+  --border: #382622;
+  --border-hover: #4D3530;
+  --text-primary: #F5ECE8;
+  --text-secondary: #C8B6AF;
+  --accent: #FF6B4A;
+  --accent-hover: #FF8266;
+  --accent-glow: rgba(255, 107, 74, 0.35);
+  --cyan: #00D4FF;
+  --cyan-glow: rgba(0, 212, 255, 0.3);
+  --green: #10B981;
+  --green-glow: rgba(16, 185, 129, 0.3);
+  --status-excelling: #FF6B4A;
+  --status-stable: #4DA6E0;
+  --status-attention: #EF4444;
+  --status-mastered: #00D4FF;
+  --status-needs-review: #F59E0B;
+  --status-high-confidence: #10B981;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom modern dark scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.urdu-text {
+  font-family: var(--font-noto-nastaliq), serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 2.2;
+}
+
+/* Glowing primary button */
+.glow-btn {
+  box-shadow: 0 4px 20px -2px var(--accent-glow);
+  transition: all 0.2s ease-in-out;
+}
+.glow-btn:hover {
+  box-shadow: 0 6px 28px 0px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+/* Score ring glow filters */
+.score-ring-glow {
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+.score-ring-glow-cyan {
+  filter: drop-shadow(0 0 10px var(--cyan-glow));
+}
+.score-ring-glow-green {
+  filter: drop-shadow(0 0 10px var(--green-glow));
+}
+
+/* Glass card style */
+.glass-card {
+  background: rgba(20, 24, 34, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+/* Sidebar active indicator */
+.sidebar-active {
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(90deg, rgba(255, 107, 74, 0.12), transparent);
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 0.35s ease-out forwards;
+}
+
+/* Pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "eval-assist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "frontend": "npm --prefix frontend run dev",
+    "backend": ".\\backend\\venv\\Scripts\\python.exe run_backend.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
